@@ -101,12 +101,12 @@ Config.Shops = {
 }
 
 Config.Pricing = {
-    ['type'] = 'fixed', -- accepts 'fixed' or 'variable'
+    ['type'] = 'variable', -- accepts 'fixed' or 'variable'
     ['repair'] = 2500, -- cost to repair vehicle
     ['fixed'] = { -- base price by level
         ['armor'] = {
             ['-1'] = 0,
-            ['0'] = 1000, -- still researching indexes of upgrades
+            ['0'] = 1000,
             ['1'] = 2000,
             ['2'] = 3000,
             ['3'] = 4000,
@@ -144,16 +144,51 @@ Config.Pricing = {
             ['3'] = 4000,
             ['4'] = 5000
         },
-        ['turbo'] = 1000,
+        ['turbo'] = 10000,
         ['max'] = 100000
     },
     ['variable'] = { -- percentage of vehicle's value in shared.lua
-        ['armor'] = 5,
-        ['brakes'] = 5,
-        ['engine'] = 5,
-        ['suspension'] = 5,
-        ['transmission'] = 5,
-        ['turbo'] = 5,
-        ['max'] = 10,
+        ['armor'] = {
+            ['-1'] = 0,
+            ['0'] = 0.1,
+            ['1'] = 0.2,
+            ['2'] = 0.3,
+            ['3'] = 0.4,
+            ['4'] = 0.5
+        },
+        ['brakes'] = {
+            ['-1'] = 0,
+            ['0'] = 0.1,
+            ['1'] = 0.2,
+            ['2'] = 0.3,
+            ['3'] = 0.4,
+            ['4'] = 0.5
+        },
+        ['engine'] = {
+            ['-1'] = 0,
+            ['0'] = 0.1,
+            ['1'] = 0.2,
+            ['2'] = 0.3,
+            ['3'] = 0.4,
+            ['4'] = 0.5
+        },
+        ['suspension'] = {
+            ['-1'] = 0,
+            ['0'] = 0.1,
+            ['1'] = 0.2,
+            ['2'] = 0.3,
+            ['3'] = 0.4,
+            ['4'] = 0.5
+        },
+        ['transmission'] = {
+            ['-1'] = 0,
+            ['0'] = 0.1,
+            ['1'] = 0.2,
+            ['2'] = 0.3,
+            ['3'] = 0.4,
+            ['4'] = 0.5
+        },
+        ['turbo'] = 0.7,
+        ['max'] = 0.9,
     }
 }
