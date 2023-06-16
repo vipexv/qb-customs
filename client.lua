@@ -81,6 +81,7 @@ local vehOptions = {
     }
 }
 
+
 local upgradesMenu = {
     {
         header = 'Armor',
@@ -169,6 +170,261 @@ local upgradesMenu = {
     }
 }
 
+-- Plate/Wheel/Light Options need to be Done.
+local cosmeticOptions = {
+    {
+        header = 'Spoilers',
+        txt = 'Change the spoiler on your vehicle!',
+        icon = "fa-solid fa-paint-roller",
+        params = {
+            event = 'qb-customs:client:cosmeticOptions',
+            args = {
+                optionType = 'spoilers'
+            }
+        }
+    },
+    {
+        header = 'Rear Bumpers',
+        txt = 'Customize the rear bumpers of your vehicle!',
+        icon = "fa-solid fa-paint-roller",
+        params = {
+            event = 'qb-customs:client:cosmeticOptions',
+            args = {
+                optionType = 'rear_bumpers'
+            }
+        }
+    },
+        {
+        header = 'Front Bumpers',
+        txt = 'Customize the Front bumpers of your vehicle!',
+        icon = "fa-solid fa-paint-roller",
+        params = {
+            event = 'qb-customs:client:cosmeticOptions',
+            args = {
+                optionType = 'front_bumpers'
+            }
+        }
+    },
+
+    {
+        header = 'Skirts',
+        txt = 'Add or change the side skirts of your vehicle!',
+        icon = "fa-solid fa-paint-roller",
+        params = {
+            event = 'qb-customs:client:cosmeticOptions',
+            args = {
+                optionType = 'skirts'
+            }
+        }
+    },
+    {
+        header = 'Exhaust',
+        txt = 'Upgrade or modify the exhaust system of your vehicle!',
+        icon = "fa-solid fa-paint-roller",
+        params = {
+            event = 'qb-customs:client:cosmeticOptions',
+            args = {
+                optionType = 'exhaust'
+            }
+        }
+    },
+    {
+        header = 'Grille',
+        txt = 'Change the front grille of your vehicle!',
+        icon = "fa-solid fa-paint-roller",
+        params = {
+            event = 'qb-customs:client:cosmeticOptions',
+            args = {
+                optionType = 'grille'
+            }
+        }
+    },
+    {
+        header = 'Hood',
+        txt = 'Modify or replace the hood of your vehicle!',
+        icon = "fa-solid fa-paint-roller",
+        params = {
+            event = 'qb-customs:client:cosmeticOptions',
+            args = {
+                optionType = 'hood'
+            }
+        }
+    },
+    {
+        header = 'Roof',
+        txt = 'Customize the roof of your vehicle!',
+        icon = "fa-solid fa-paint-roller",
+        params = {
+            event = 'qb-customs:client:cosmeticOptions',
+            args = {
+                optionType = 'roof'
+            }
+        }
+    },
+    {
+        header = 'Wheels',
+        txt = 'Change the wheels and rims of your vehicle!',
+        icon = "fa-solid fa-paint-roller",
+        params = {
+            event = 'qb-customs:client:cosmeticOptions',
+            args = {
+                optionType = 'wheels'
+            }
+        }
+    },
+    {
+        header = 'Plate',
+        txt = 'Customize the license plate of your vehicle!',
+        icon = "fa-solid fa-paint-roller",
+        params = {
+            event = 'qb-customs:client:cosmeticOptions',
+            args = {
+                optionType = 'plate'
+            }
+        }
+    },
+    {
+        header = 'Window Tint',
+        txt = 'Change the window tint of your vehicle!',
+        icon = "fa-solid fa-paint-roller",
+        params = {
+            event = 'qb-customs:client:cosmeticOptions',
+            args = {
+                optionType = 'windowTint'
+            }
+        }
+    },
+    {
+        header = 'Lights',
+        txt = 'Upgrade or modify the lights of your vehicle!',
+        icon = "fa-solid fa-paint-roller",
+        params = {
+            event = 'qb-customs:client:cosmeticOptions',
+            args = {
+                optionType = 'lights'
+            }
+        }
+    },
+    {
+        header = 'Back',
+        txt = 'Return to previous menu!',
+        icon = "fa-solid fa-arrow-left",
+        params = {
+            event = 'qb-customs:client:showVehOptions',
+        }
+    }
+}
+
+    local tintOptions = {
+        {
+            header = 'No Tint',
+            txt = 'Remove window tint from your vehicle!',
+            icon = "fa-solid fa-sun",
+            params = {
+                event = 'qb-customs:client:applyTint',
+                args = {
+                    tintLevel = 0
+                }
+            }
+        },
+        {
+            header = 'Light Smoke',
+            txt = 'Apply light smoke window tint to your vehicle!',
+            icon = "fa-solid fa-sun",
+            params = {
+                event = 'qb-customs:client:applyTint',
+                args = {
+                    tintLevel = 1
+                }
+            }
+        },
+        {
+            header = 'Dark Smoke',
+            txt = 'Apply dark smoke window tint to your vehicle!',
+            icon = "fa-solid fa-sun",
+            params = {
+                event = 'qb-customs:client:applyTint',
+                args = {
+                    tintLevel = 2
+                }
+            }
+        },
+        {
+            header = 'Limo',
+            txt = 'Apply limo window tint to your vehicle!',
+            icon = "fa-solid fa-sun",
+            params = {
+                event = 'qb-customs:client:applyTint',
+                args = {
+                    tintLevel = 3
+                }
+            }
+        },
+        {
+            header = 'Green',
+            txt = 'Apply green window tint to your vehicle!',
+            icon = "fa-solid fa-sun",
+            params = {
+                event = 'qb-customs:client:applyTint',
+                args = {
+                    tintLevel = 4
+                }
+            }
+        },
+        {
+            header = 'Blue',
+            txt = 'Apply blue window tint to your vehicle!',
+            icon = "fa-solid fa-sun",
+            params = {
+                event = 'qb-customs:client:applyTint',
+                args = {
+                    tintLevel = 5
+                }
+            }
+        },
+        {
+            header = 'Red',
+            txt = 'Apply red window tint to your vehicle!',
+            icon = "fa-solid fa-sun",
+            params = {
+                event = 'qb-customs:client:applyTint',
+                args = {
+                    tintLevel = 6
+                }
+            }
+        },
+        {
+            header = 'Yellow',
+            txt = 'Apply yellow window tint to your vehicle!',
+            icon = "fa-solid fa-sun",
+            params = {
+                event = 'qb-customs:client:applyTint',
+                args = {
+                    tintLevel = 7
+                }
+            }
+        },
+        {
+            header = 'Black',
+            txt = 'Apply black window tint to your vehicle!',
+            icon = "fa-solid fa-sun",
+            params = {
+                event = 'qb-customs:client:applyTint',
+                args = {
+                    tintLevel = 8
+                }
+            }
+        },
+        {
+            header = 'Back',
+            txt = 'Return to previous menu!',
+            icon = "fa-solid fa-arrow-left",
+            params = {
+                event = 'qb-customs:client:cosmeticMods',
+            }
+        }
+    }
+
 -- Map Blips
 
 Citizen.CreateThread(function()
@@ -237,7 +493,6 @@ local function Init()
 end
 
 -- Handler
-
 AddEventHandler('QBCore:Client:OnPlayerLoaded', function()
     PlayerData = QBCore.Functions.GetPlayerData()
     if not Initialized then Init() end
@@ -282,15 +537,319 @@ RegisterNetEvent('qb-customs:client:repairVehicle', function()
     end, Config.Pricing['repair'])
 end)
 
-RegisterNetEvent('qb-customs:client:performanceMods', function()
-    exports['qb-menu']:openMenu(upgradesMenu)
-end)
-
 RegisterNetEvent('qb-customs:client:cosmeticMods', function() -- TO DO
     local vehicle = GetVehiclePedIsUsing(PlayerPedId())
     if GetVehicleModKit(vehicle) ~= 0 then SetVehicleModKit(vehicle, 0) end
-    exports['qb-menu']:openMenu(vehOptions)
+    exports['qb-menu']:openMenu(cosmeticOptions)
 end)
+
+RegisterNetEvent('qb-customs:client:cosmeticOptions', function(data)
+    local vehicle = GetVehiclePedIsUsing(PlayerPedId())
+    exports['qb-menu']:openMenu(upgradesMenu)
+    if data.optionType == 'spoilers' then
+        local spoilersMenu = {}
+        for i = -1, GetNumVehicleMods(vehicle, 0) do
+            local header = 'Spoiler Type: ' .. i
+            if i == -1 then
+                header = 'Spoiler Type: Stock'
+            end
+            local price = 2000
+            local spoilerItem = {
+                header = header,
+                txt = 'Install Level ' .. i .. ' Spoiler for $' .. price .. '!',
+                icon = 'fa-solid fa-wrench',
+                params = {
+                    event = 'qb-customs:client:install',
+                    args = {
+                        upgradeType = 'spoilers',
+                        modType = 0,
+                        upgradeIndex = i,
+                        price = price
+                    }
+                }
+            }
+            spoilersMenu[#spoilersMenu + 1] = spoilerItem
+        end
+        spoilersMenu[#spoilersMenu + 1] = {
+            header = 'Back',
+            txt = 'Return to previous menu!',
+            icon = "fa-solid fa-arrow-left",
+            params = {
+                event = 'qb-customs:client:cosmeticMods',
+            }
+        }
+        exports['qb-menu']:openMenu(spoilersMenu, true)
+    elseif data.optionType == 'front_bumpers' then
+        local bumpersMenu = {}
+        for i=-1, GetNumVehicleMods(vehicle, 1) do
+            local header = 'Front Bumper Type: '..i
+            if i == -1 then header = 'Front Bumper Type: Stock' end
+            if GetVehicleMod(vehicle, 1) == i then header = header..' (Installed)' end
+            local price = 1000
+            local bumperItem = {
+                header = header,
+                price = price,
+                txt = 'Install Level ' ..i.. ' Front Bumper for $'..price..'!',
+                icon = 'fa-solid fa-wrench',
+                params = {
+                    event = 'qb-customs:client:install',
+                    args = {
+                        upgradeType = 'front_bumpers',
+                        modType = 1,
+                        upgradeIndex = i,
+                        price = price
+                    }
+              }
+            }
+            bumpersMenu[#bumpersMenu + 1] = bumperItem
+        end
+        bumpersMenu[#bumpersMenu+1] = {
+            header = 'Back',
+            txt = 'Return to previous menu!',
+            icon = "fa-solid fa-arrow-left",
+            params = {
+                event = 'qb-customs:client:cosmeticMods',
+            }
+        }
+        exports['qb-menu']:openMenu(bumpersMenu, true)
+    elseif data.optionType == 'rear_bumpers' then
+        local bumpersMenu = {}
+        for i=-1, GetNumVehicleMods(vehicle, 2) do
+            local header = 'Rear Bumper Type: '..i
+            if i == -1 then header = 'Rear Bumper Type: Stock' end
+            if GetVehicleMod(vehicle, 2) == i then header = header..' (Installed)' end
+            local price = 1000
+            local bumperItem = {
+                header = header,
+                price = price,
+                txt = 'Install Level ' ..i.. ' Rear Bumper for $'..price..'!',
+                icon = 'fa-solid fa-wrench',
+                params = {
+                    event = 'qb-customs:client:install',
+                    args = {
+                        upgradeType = 'rear_bumpers',
+                        modType = 2,
+                        upgradeIndex = i,
+                        price = price
+                    }
+              }
+            }
+            bumpersMenu[#bumpersMenu + 1] = bumperItem
+        end
+        bumpersMenu[#bumpersMenu+1] = {
+            header = 'Back',
+            txt = 'Return to previous menu!',
+            icon = "fa-solid fa-arrow-left",
+            params = {
+                event = 'qb-customs:client:cosmeticMods',
+            }
+        }
+        exports['qb-menu']:openMenu(bumpersMenu, true)
+     elseif data.optionType == 'skirts' then
+        local skirtsMenu = {}
+        for i=-1, GetNumVehicleMods(vehicle, 3) do
+            local header = 'Skirts Type: '..i
+            if i == -1 then header = 'Skirts Type: Stock' end
+            if GetVehicleMod(vehicle, 3) == i then header = header..' (Installed)' end
+            local price = 1000
+            local skirtsItem = {
+                header = header,
+                price = price,
+                txt = 'Install Level ' ..i.. ' Skirts for $'..price..'!',
+                icon = 'fa-solid fa-wrench',
+                params = {
+                    event = 'qb-customs:client:install',
+                    args = {
+                        upgradeType = 'skirts',
+                        modType = 3,
+                        upgradeIndex = i,
+                        price = price
+                    }
+              }
+            }
+            skirtsMenu[#skirtsMenu + 1] = skirtsItem
+        end
+        skirtsMenu[#skirtsMenu+1] = {
+            header = 'Back',
+            txt = 'Return to previous menu!',
+            icon = "fa-solid fa-arrow-left",
+            params = {
+                event = 'qb-customs:client:cosmeticMods',
+            }
+        }
+        exports['qb-menu']:openMenu(skirtsMenu, true)
+       elseif data.optionType == 'exhaust' then
+        local exhaustMenu = {}
+        for i=-1, GetNumVehicleMods(vehicle, 4) do
+            local header = 'Exhaust Type: '..i
+            if i == -1 then header = 'Exhaust Type: Stock' end
+            if GetVehicleMod(vehicle, 4) == i then header = header..' (Installed)' end
+            local price = 1000
+            local exhaustItem = {
+                header = header,
+                price = price,
+                txt = 'Install Level ' ..i.. ' Exhaust for $'..price..'!',
+                icon = 'fa-solid fa-wrench',
+                params = {
+                    event = 'qb-customs:client:install',
+                    args = {
+                        upgradeType = 'skirts',
+                        modType = 4,
+                        upgradeIndex = i,
+                        price = price
+                    }
+              }
+            }
+            exhaustMenu[#exhaustMenu + 1] = exhaustItem
+        end
+        exhaustMenu[#exhaustMenu+1] = {
+            header = 'Back',
+            txt = 'Return to previous menu!',
+            icon = "fa-solid fa-arrow-left",
+            params = {
+                event = 'qb-customs:client:cosmeticMods',
+            }
+        }
+        exports['qb-menu']:openMenu(exhaustMenu, true)
+     elseif data.optionType == 'grille' then
+        local grilleMenu = {}
+        for i=-1, GetNumVehicleMods(vehicle, 6) do
+            local header = 'Grille Type: '..i
+            if i == -1 then header = 'Grille Type: Stock' end
+            if GetVehicleMod(vehicle, 6) == i then header = header..' (Installed)' end
+            local price = 1000
+            local grilleItem = {
+                header = header,
+                price = price,
+                txt = 'Install Level ' ..i.. ' Grille for $'..price..'!',
+                icon = 'fa-solid fa-wrench',
+                params = {
+                    event = 'qb-customs:client:install',
+                    args = {
+                        upgradeType = 'grille',
+                        modType = 6,
+                        upgradeIndex = i,
+                        price = price
+                    }
+              }
+            }
+            grilleMenu[#grilleMenu + 1] = grilleItem
+        end
+        grilleMenu[#grilleMenu+1] = {
+            header = 'Back',
+            txt = 'Return to previous menu!',
+            icon = "fa-solid fa-arrow-left",
+            params = {
+                event = 'qb-customs:client:cosmeticMods',
+            }
+        }
+        exports['qb-menu']:openMenu(grilleMenu, true)
+     elseif data.optionType == 'hood' then
+        local hoodMenu = {}
+        for i=-1, GetNumVehicleMods(vehicle, 7) do
+            local header = 'Hood Type: '..i
+            if i == -1 then header = 'Hood Type: Stock' end
+            if GetVehicleMod(vehicle, 7) == i then header = header..' (Installed)' end
+            local price = 1000
+            local hoodItem = {
+                header = header,
+                price = price,
+                txt = 'Install Level ' ..i.. ' Hood for $'..price..'!',
+                icon = 'fa-solid fa-wrench',
+                params = {
+                    event = 'qb-customs:client:install',
+                    args = {
+                        upgradeType = 'hood',
+                        modType = 7,
+                        upgradeIndex = i,
+                        price = price
+                    }
+              }
+            }
+            hoodMenu[#hoodMenu + 1] = hoodItem
+        end
+        hoodMenu[#hoodMenu+1] = {
+            header = 'Back',
+            txt = 'Return to previous menu!',
+            icon = "fa-solid fa-arrow-left",
+            params = {
+                event = 'qb-customs:client:cosmeticMods',
+            }
+        }
+        exports['qb-menu']:openMenu(hoodMenu, true)
+    elseif data.optionType == 'roof' then
+        local roofMenu = {}
+        for i=-1, GetNumVehicleMods(vehicle, 10) do
+            local header = 'Roof Type: '..i
+            if i == -1 then header = 'Roof Type: Stock' end
+            if GetVehicleMod(vehicle, 10) == i then header = header..' (Installed)' end
+            local price = 1000
+            local roofItem = {
+                header = header,
+                price = price,
+                txt = 'Install Level ' ..i.. ' Roof for $'..price..'!',
+                icon = 'fa-solid fa-wrench',
+                params = {
+                    event = 'qb-customs:client:install',
+                    args = {
+                        upgradeType = 'skirts',
+                        modType = 10,
+                        upgradeIndex = i,
+                        price = price
+                    }
+              }
+            }
+            roofMenu[#roofMenu + 1] = roofItem
+        end
+        roofMenu[#roofMenu+1] = {
+            header = 'Back',
+            txt = 'Return to previous menu!',
+            icon = "fa-solid fa-arrow-left",
+            params = {
+                event = 'qb-customs:client:cosmeticMods',
+            }
+        }
+        exports['qb-menu']:openMenu(roofMenu, true)
+     elseif data.optionType == 'windowTint' then
+     exports['qb-menu']:openMenu(tintOptions, true)
+    --  elseif data.optionType == 'lights' then
+    --     local lightsMenu = {}
+    --     for i=-1, GetNumVehicleMods(vehicle, 22) do
+    --         local header = 'Light Type: '..i
+    --         if i == -1 then header = 'Light Type: Stock' end
+    --         if i == GetVehicleMod(vehlicle, 22) then header = header ..' (Installed)' end
+    --         local price = 200
+    --         local lightsItem = {
+    --             header = header,
+    --             price = price,
+    --             txt = 'Install Level ' ..i.. ' Lights for $'..price..'!',
+    --             icon = 'fa-solid fa-wrench',
+    --             params = {
+    --                 event = 'qb-customs:client:install',
+    --                 args = {
+    --                     upgradeType = 'lights',
+    --                     modType = 22,
+    --                     upgradeIndex = i,
+    --                     price = price
+    --                 }
+    --             }
+    --         }
+    --         lightsMenu[#lightsMenu + 1] = lightsItem
+    --     end
+    --     lightsMenu[#lightsMenu + 1] = {
+    --         header = 'Back',
+    --         txt = 'Return to previous menu!',
+    --         icon = "fa-solid fa-arrow-left",
+    --         params = {
+    --             event = 'qb-customs:client:cosmeticMods',
+    --         }
+    --     }
+    --     exports['qb-menu']:openMenu(lightsMenu, true)
+    end
+end)
+
+
+
 
 RegisterNetEvent('qb-customs:client:performanceOptions', function(data)
     local vehicle = GetVehiclePedIsUsing(PlayerPedId())
@@ -499,10 +1058,20 @@ RegisterNetEvent('qb-customs:client:install', function(data)
             local upgradeIndex = data.upgradeIndex
             local modType = data.modType
             SetVehicleMod(vehicle, modType, upgradeIndex, false)
-            QBCore.Functions.Notify('Performance upgrade installed!', 'success')
+            QBCore.Functions.Notify('Upgrade installed!', 'success')
         else
             QBCore.Functions.Notify('Not enough money!', 'error')
         end
     end, data.price)
-    exports['qb-menu']:openMenu(upgradesMenu)
+    exports['qb-menu']:openMenu(vehOptions)
+end)
+
+RegisterNetEvent('qb-customs:client:applyTint', function(data)
+    QBCore.Functions.TriggerCallback('qb-customs:server:checkMoney', function(success)
+        if success then
+            local vehicle = GetVehiclePedIsUsing(PlayerPedId())
+            local tintLevel = data.tintLevel
+            SetVehicleWindowTint(vehicle, tintLevel)
+        end
+    end, 200)
 end)
