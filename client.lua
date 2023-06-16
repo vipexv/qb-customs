@@ -545,7 +545,7 @@ end)
 
 RegisterNetEvent('qb-customs:client:cosmeticOptions', function(data)
     local vehicle = GetVehiclePedIsUsing(PlayerPedId())
-    exports['qb-menu']:openMenu(upgradesMenu)
+    -- exports['qb-menu']:openMenu(upgradesMenu)
     if data.optionType == 'spoilers' then
         local spoilersMenu = {}
         for i = -1, GetNumVehicleMods(vehicle, 0) do
@@ -848,8 +848,9 @@ RegisterNetEvent('qb-customs:client:cosmeticOptions', function(data)
     end
 end)
 
-
-
+RegisterNetEvent('qb-customs:client:performanceMods', function()
+    exports['qb-menu']:openMenu(upgradesMenu)
+end)
 
 RegisterNetEvent('qb-customs:client:performanceOptions', function(data)
     local vehicle = GetVehiclePedIsUsing(PlayerPedId())
@@ -1051,6 +1052,7 @@ RegisterNetEvent('qb-customs:client:performanceOptions', function(data)
     end
 end)
 
+
 RegisterNetEvent('qb-customs:client:install', function(data)
     QBCore.Functions.TriggerCallback('qb-customs:server:checkMoney', function(success)
         if success then
@@ -1058,12 +1060,12 @@ RegisterNetEvent('qb-customs:client:install', function(data)
             local upgradeIndex = data.upgradeIndex
             local modType = data.modType
             SetVehicleMod(vehicle, modType, upgradeIndex, false)
-            QBCore.Functions.Notify('Upgrade installed!', 'success')
+            QBCore.Functions.Notify('Performance upgrade installed!', 'success')
         else
             QBCore.Functions.Notify('Not enough money!', 'error')
         end
     end, data.price)
-    exports['qb-menu']:openMenu(vehOptions)
+    exports['qb-menu']:openMenu(upgradesMenu)
 end)
 
 RegisterNetEvent('qb-customs:client:applyTint', function(data)
