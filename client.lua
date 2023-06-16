@@ -170,7 +170,7 @@ local upgradesMenu = {
     }
 }
 
--- Plate/Wheel/Light Options need to be Done.
+-- Plate/Wheel Options need to be Done.
 local cosmeticOptions = {
     {
         header = 'Spoilers',
@@ -545,7 +545,6 @@ end)
 
 RegisterNetEvent('qb-customs:client:cosmeticOptions', function(data)
     local vehicle = GetVehiclePedIsUsing(PlayerPedId())
-    -- exports['qb-menu']:openMenu(upgradesMenu)
     if data.optionType == 'spoilers' then
         local spoilersMenu = {}
         for i = -1, GetNumVehicleMods(vehicle, 0) do
@@ -834,6 +833,195 @@ RegisterNetEvent('qb-customs:client:cosmeticOptions', function(data)
         exports['qb-menu']:openMenu(roofMenu, true)
      elseif data.optionType == 'windowTint' then
      exports['qb-menu']:openMenu(tintOptions, true)
+         elseif data.optionType == 'wheels' then
+        local wheelsMenu = {}
+        for i = -1, GetNumVehicleMods(vehicle, 23) do
+            local header = 'Wheels Type: ' .. i
+            local price = Config.Pricing['cosmetics']['wheels']
+            if i == -1 then
+                header = 'Wheels Type: Stock'
+                price = 0
+            end
+            local wheelsItem = {
+                header = header,
+                txt = 'Install Level ' .. i .. ' Wheels for $' .. price .. '!',
+                icon = 'fa-solid fa-wrench',
+                params = {
+                    event = 'qb-customs:client:install',
+                    args = {
+                        upgradeType = 'wheels',
+                        modType = 23,
+                        upgradeIndex = i,
+                        price = price
+                    }
+                }
+            }
+            wheelsMenu[#wheelsMenu + 1] = wheelsItem
+        end
+        wheelsMenu[#wheelsMenu + 1] = {
+            header = 'Back',
+            txt = 'Return to previous menu!',
+            icon = "fa-solid fa-arrow-left",
+            params = {
+                event = 'qb-customs:client:cosmeticMods',
+            }
+        }
+        exports['qb-menu']:openMenu(wheelsMenu, true)
+    elseif data.optionType == 'lights' then
+        local price = Config.Pricing['cosmetics']['lights']
+    local xenonMenu = {
+        {
+            header = 'Toggle Xenon Lights On',
+            txt = 'Turn Xenon Lights On | Price: $'..price,
+            icon = 'fa-solid fa-car',
+            params = {
+                event = 'qb-customs:client:install',
+                args = {
+                    upgradeType = 'toggleMod',
+                    modType = 22,
+                    state = true,
+                    price = price
+                }
+            }
+        },
+         {
+            header = 'Toggle Xenon Lights Off',
+            txt = 'Turn Xenon Lights Off | Price: Free',
+            icon = 'fa-solid fa-car',
+            params = {
+                event = 'qb-customs:client:install',
+                args = {
+                    upgradeType = 'toggleMod',
+                    modType = 22,
+                    state = false,
+                    price = 0
+                }
+            }
+        }
+    }
+        xenonMenu[#xenonMenu + 1] = {
+            header = 'Back',
+            txt = 'Return to previous menu!',
+            icon = "fa-solid fa-arrow-left",
+            params = {
+                event = 'qb-customs:client:cosmeticMods',
+            }
+        }
+        exports['qb-menu']:openMenu(xenonMenu, true)
+elseif data.optionType == 'plate' then
+    price = Config.Pricing['cosmetics']['plates']
+    local plateMenu = {
+        {
+            header = 'Blue on White 1',
+            txt = 'Change Plate to Blue on White 1',
+            icon = 'fa-solid fa-car',
+            params = {
+                event = 'qb-customs:client:install',
+                args = {
+                    upgradeType = 'plate',
+                    modType = 0,
+                    upgradeIndex = 0,
+                    price = price
+                }
+            }
+        },
+        {
+            header = 'Blue on White',
+            txt = 'Change Plate to Blue on White 2',
+            icon = 'fa-solid fa-car',
+            params = {
+                event = 'qb-customs:client:install',
+                args = {
+                    upgradeType = 'plate',
+                    modType = 0,
+                    upgradeIndex = 0,
+                    price = price
+                }
+            }
+        },
+        {
+            header = 'Yellow On Black',
+            txt = 'Change Plate to Blue on White 3',
+            icon = 'fa-solid fa-car',
+            params = {
+                event = 'qb-customs:client:install',
+                args = {
+                    upgradeType = 'plate',
+                    modType = 0,
+                    upgradeIndex = 1,
+                    price = price
+                }
+            }
+        },
+        {
+            header = 'Yellow on Blue',
+            txt = 'Change Plate to Yellow on Black',
+            icon = 'fa-solid fa-car',
+            params = {
+                event = 'qb-customs:client:install',
+                args = {
+                    upgradeType = 'plate',
+                    modType = 0,
+                    upgradeIndex = 2,
+                    price = price
+                }
+            }
+        },
+        {
+            header = 'Blue on White 2',
+            txt = 'Change Plate to Yellow on Blue',
+            icon = 'fa-solid fa-car',
+            params = {
+                event = 'qb-customs:client:install',
+                args = {
+                    upgradeType = 'plate',
+                    modType = 0,
+                    upgradeIndex = 3,
+                    price = price
+                }
+            }
+        },
+        {
+            header = 'Blue on White 3',
+            txt = 'Change Plate to Blue on White 5',
+            icon = 'fa-solid fa-car',
+            params = {
+                event = 'qb-customs:client:install',
+                args = {
+                    upgradeType = 'plate',
+                    modType = 0,
+                    upgradeIndex = 4,
+                    price = price
+                }
+            }
+        },
+        {
+            header = 'Yankton',
+            txt = 'Change Plate to Yankton',
+            icon = 'fa-solid fa-car',
+            params = {
+                event = 'qb-customs:client:install',
+                args = {
+                    upgradeType = 'plate',
+                    modType = 0,
+                    upgradeIndex = 5,
+                    price = price
+                }
+            }
+        }
+    }
+
+    plateMenu[#plateMenu + 1] = {
+        header = 'Back',
+        txt = 'Return to previous menu!',
+        icon = "fa-solid fa-arrow-left",
+        params = {
+            event = 'qb-customs:client:cosmeticMods',
+        }
+    }
+
+    exports['qb-menu']:openMenu(plateMenu, true)
+
     end
 end)
 
@@ -1046,10 +1234,18 @@ RegisterNetEvent('qb-customs:client:install', function(data)
     QBCore.Functions.TriggerCallback('qb-customs:server:checkMoney', function(success)
         if success then
             local vehicle = GetVehiclePedIsUsing(PlayerPedId())
+            if data.upgradeType == 'toggleMod' then
+                 local state = IsToggleModOn(vehicle, data.modType)
+                 ToggleVehicleMod(vehicle, data.modType, data.state)
+            end
+            if data.upgradeType == 'plate' then
+                SetVehicleNumberPlateTextIndex(vehicle, data.upgradeIndex)
+            else
             local upgradeIndex = data.upgradeIndex
             local modType = data.modType
             SetVehicleMod(vehicle, modType, upgradeIndex, false)
             QBCore.Functions.Notify('Upgrade installed!', 'success')
+            end
         else
             QBCore.Functions.Notify('Not enough money!', 'error')
         end
@@ -1065,4 +1261,9 @@ RegisterNetEvent('qb-customs:client:applyTint', function(data)
             SetVehicleWindowTint(vehicle, tintLevel)
         end
     end, Config.Pricing['cosmetics']['windowTints'])
+end)
+
+RegisterNetEvent('qb-customs:client:toggleMod', function(data)
+    local vehicle = GetVehiclePedIsUsing(PlayerPedId())
+    ToggleVehicleMod(vehicle, data.mod, data.state)
 end)

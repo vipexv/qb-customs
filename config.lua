@@ -101,7 +101,7 @@ Config.Shops = {
 }
 
 Config.Pricing = {
-    ['type'] = 'fixed', -- accepts 'fixed' or 'variable'
+    ['type'] = 'variable', -- accepts 'fixed' or 'variable'
     ['repair'] = 2500, -- cost to repair vehicle
     ['fixed'] = { -- base price by level
         ['armor'] = {
@@ -200,6 +200,9 @@ Config.Pricing = {
         ['grille'] = 2000,
         ['hood'] = 3500,
         ['roof'] = 3500,
-        ['windowTints'] = 1000
+        ['windowTints'] = 1000,
+        ['lights'] = 1000,
+        ['plates'] = 2000,
+        ['wheels'] = 5000 -- This needs to be changed, wheels having a set price isn't good, will be working on a min/max in the future.
     }
 }
