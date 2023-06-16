@@ -170,7 +170,6 @@ local upgradesMenu = {
     }
 }
 
--- Plate/Wheel Options need to be Done.
 local cosmeticOptions = {
     {
         header = 'Spoilers',
