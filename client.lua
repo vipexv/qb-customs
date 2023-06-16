@@ -550,10 +550,11 @@ RegisterNetEvent('qb-customs:client:cosmeticOptions', function(data)
         local spoilersMenu = {}
         for i = -1, GetNumVehicleMods(vehicle, 0) do
             local header = 'Spoiler Type: ' .. i
+            local price = Config.Pricing['cosmetics']['spoiler']
             if i == -1 then
                 header = 'Spoiler Type: Stock'
+                price = 0
             end
-            local price = 2000
             local spoilerItem = {
                 header = header,
                 txt = 'Install Level ' .. i .. ' Spoiler for $' .. price .. '!',
@@ -583,9 +584,12 @@ RegisterNetEvent('qb-customs:client:cosmeticOptions', function(data)
         local bumpersMenu = {}
         for i=-1, GetNumVehicleMods(vehicle, 1) do
             local header = 'Front Bumper Type: '..i
-            if i == -1 then header = 'Front Bumper Type: Stock' end
+            local price = Config.Pricing['cosmetics']['front_bumper']
+            if i == -1 then
+            header = 'Front Bumper Type: Stock' 
+            price = 0    
+            end
             if GetVehicleMod(vehicle, 1) == i then header = header..' (Installed)' end
-            local price = 1000
             local bumperItem = {
                 header = header,
                 price = price,
@@ -616,9 +620,12 @@ RegisterNetEvent('qb-customs:client:cosmeticOptions', function(data)
         local bumpersMenu = {}
         for i=-1, GetNumVehicleMods(vehicle, 2) do
             local header = 'Rear Bumper Type: '..i
-            if i == -1 then header = 'Rear Bumper Type: Stock' end
+            local price = Config.Pricing['cosmetics']['rear_bumper']
+            if i == -1 then 
+            header = 'Rear Bumper Type: Stock' 
+            price = 0
+            end
             if GetVehicleMod(vehicle, 2) == i then header = header..' (Installed)' end
-            local price = 1000
             local bumperItem = {
                 header = header,
                 price = price,
@@ -649,9 +656,12 @@ RegisterNetEvent('qb-customs:client:cosmeticOptions', function(data)
         local skirtsMenu = {}
         for i=-1, GetNumVehicleMods(vehicle, 3) do
             local header = 'Skirts Type: '..i
-            if i == -1 then header = 'Skirts Type: Stock' end
+            local price = Config.Pricing['cosmetics']['skirts']
+            if i == -1 then 
+                header = 'Skirts Type: Stock'
+                price = 0
+            end
             if GetVehicleMod(vehicle, 3) == i then header = header..' (Installed)' end
-            local price = 1000
             local skirtsItem = {
                 header = header,
                 price = price,
@@ -682,9 +692,12 @@ RegisterNetEvent('qb-customs:client:cosmeticOptions', function(data)
         local exhaustMenu = {}
         for i=-1, GetNumVehicleMods(vehicle, 4) do
             local header = 'Exhaust Type: '..i
-            if i == -1 then header = 'Exhaust Type: Stock' end
+            local price = Config.Pricing['cosmetics']['exhaust']
+            if i == -1 then 
+            header = 'Exhaust Type: Stock'
+            price = 0 
+            end
             if GetVehicleMod(vehicle, 4) == i then header = header..' (Installed)' end
-            local price = 1000
             local exhaustItem = {
                 header = header,
                 price = price,
@@ -715,9 +728,12 @@ RegisterNetEvent('qb-customs:client:cosmeticOptions', function(data)
         local grilleMenu = {}
         for i=-1, GetNumVehicleMods(vehicle, 6) do
             local header = 'Grille Type: '..i
-            if i == -1 then header = 'Grille Type: Stock' end
+            local price = Config.Pricing['cosmetics']['grille']
+            if i == -1 then 
+                header = 'Grille Type: Stock'
+                price = 0
+            end
             if GetVehicleMod(vehicle, 6) == i then header = header..' (Installed)' end
-            local price = 1000
             local grilleItem = {
                 header = header,
                 price = price,
@@ -748,9 +764,12 @@ RegisterNetEvent('qb-customs:client:cosmeticOptions', function(data)
         local hoodMenu = {}
         for i=-1, GetNumVehicleMods(vehicle, 7) do
             local header = 'Hood Type: '..i
-            if i == -1 then header = 'Hood Type: Stock' end
+            local price = Config.Pricing['cosmetics']['hood']
+            if i == -1 then 
+                header = 'Hood Type: Stock'
+                price = 0
+            end
             if GetVehicleMod(vehicle, 7) == i then header = header..' (Installed)' end
-            local price = 1000
             local hoodItem = {
                 header = header,
                 price = price,
@@ -781,9 +800,12 @@ RegisterNetEvent('qb-customs:client:cosmeticOptions', function(data)
         local roofMenu = {}
         for i=-1, GetNumVehicleMods(vehicle, 10) do
             local header = 'Roof Type: '..i
-            if i == -1 then header = 'Roof Type: Stock' end
+            local price = Config.Pricing['cosmetics']['roof']
+            if i == -1 then 
+                header = 'Roof Type: Stock'
+                price = 0
+            end
             if GetVehicleMod(vehicle, 10) == i then header = header..' (Installed)' end
-            local price = 1000
             local roofItem = {
                 header = header,
                 price = price,
@@ -812,39 +834,6 @@ RegisterNetEvent('qb-customs:client:cosmeticOptions', function(data)
         exports['qb-menu']:openMenu(roofMenu, true)
      elseif data.optionType == 'windowTint' then
      exports['qb-menu']:openMenu(tintOptions, true)
-    --  elseif data.optionType == 'lights' then
-    --     local lightsMenu = {}
-    --     for i=-1, GetNumVehicleMods(vehicle, 22) do
-    --         local header = 'Light Type: '..i
-    --         if i == -1 then header = 'Light Type: Stock' end
-    --         if i == GetVehicleMod(vehlicle, 22) then header = header ..' (Installed)' end
-    --         local price = 200
-    --         local lightsItem = {
-    --             header = header,
-    --             price = price,
-    --             txt = 'Install Level ' ..i.. ' Lights for $'..price..'!',
-    --             icon = 'fa-solid fa-wrench',
-    --             params = {
-    --                 event = 'qb-customs:client:install',
-    --                 args = {
-    --                     upgradeType = 'lights',
-    --                     modType = 22,
-    --                     upgradeIndex = i,
-    --                     price = price
-    --                 }
-    --             }
-    --         }
-    --         lightsMenu[#lightsMenu + 1] = lightsItem
-    --     end
-    --     lightsMenu[#lightsMenu + 1] = {
-    --         header = 'Back',
-    --         txt = 'Return to previous menu!',
-    --         icon = "fa-solid fa-arrow-left",
-    --         params = {
-    --             event = 'qb-customs:client:cosmeticMods',
-    --         }
-    --     }
-    --     exports['qb-menu']:openMenu(lightsMenu, true)
     end
 end)
 
@@ -1060,12 +1049,12 @@ RegisterNetEvent('qb-customs:client:install', function(data)
             local upgradeIndex = data.upgradeIndex
             local modType = data.modType
             SetVehicleMod(vehicle, modType, upgradeIndex, false)
-            QBCore.Functions.Notify('Performance upgrade installed!', 'success')
+            QBCore.Functions.Notify('Upgrade installed!', 'success')
         else
             QBCore.Functions.Notify('Not enough money!', 'error')
         end
     end, data.price)
-    exports['qb-menu']:openMenu(upgradesMenu)
+    exports['qb-menu']:openMenu(vehOptions)
 end)
 
 RegisterNetEvent('qb-customs:client:applyTint', function(data)
@@ -1075,5 +1064,5 @@ RegisterNetEvent('qb-customs:client:applyTint', function(data)
             local tintLevel = data.tintLevel
             SetVehicleWindowTint(vehicle, tintLevel)
         end
-    end, 200)
+    end, Config.Pricing['cosmetics']['windowTints'])
 end)

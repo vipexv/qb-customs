@@ -101,7 +101,7 @@ Config.Shops = {
 }
 
 Config.Pricing = {
-    ['type'] = 'variable', -- accepts 'fixed' or 'variable'
+    ['type'] = 'fixed', -- accepts 'fixed' or 'variable'
     ['repair'] = 2500, -- cost to repair vehicle
     ['fixed'] = { -- base price by level
         ['armor'] = {
@@ -145,7 +145,7 @@ Config.Pricing = {
             ['4'] = 5000
         },
         ['turbo'] = 10000,
-        ['max'] = 100000
+        ['max'] = 100000,
     },
     ['variable'] = { -- percentage of vehicle's value in shared.lua
         ['armor'] = {
@@ -190,5 +190,16 @@ Config.Pricing = {
         },
         ['turbo'] = 0.7,
         ['max'] = 0.9,
+    },
+    ['cosmetics'] = {
+        ['spoiler'] = 2500,
+        ['front_bumper'] = 1500,
+        ['rear_bumper'] = 1500,
+        ['skirts'] = 2000,
+        ['exhaust'] = 1500,
+        ['grille'] = 2000,
+        ['hood'] = 3500,
+        ['roof'] = 3500,
+        ['windowTints'] = 1000
     }
 }
